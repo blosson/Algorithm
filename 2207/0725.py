@@ -19,3 +19,6 @@ for i in range(1, N+1):
     else:
         sum = sum - i
 print(f'#{k} {sum}', end = '')
+
+# why not
+# why!
