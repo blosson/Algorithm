@@ -43,4 +43,4 @@ for i in range(1, T+1): #1부터 테스트케이스까지를
 	
     for j in range(len(test_list)): 
         print(f'#{j+1}', end=' ')
-        print(*test_list[j])
+        print(*test_list[j])  
