@@ -1,15 +1,18 @@
-case = int(input())
 
-for i in range(case):
-    num = list(map(int, input('10개의 수를 입력하세요. : ').split()))  # map 함수 다시 공부하기
-    
-    num.sort()
-    print(num)
-    del num[0] # 첫 인덱스 삭제
-    del num[-1] # 마지막 인덱스 삭제
-    
-    
-    num_sum = sum(num)
-    num_average = int(round(sum(num)) / len(num)) # 평균구하고 첫째 자리에서     반올림하여 정수로 만듦
-    print(f'#{i+1} {num_average}')
+test_case = int(input())
 
+for i in range(1, test_case):
+    numbers = map(int, input().split()) # 10개 숫자 받기
+    numbers_list = list(numbers) # list로 변환(정렬하여 제거하기 위해)
+
+    numbers_list.sort() # 정렬(원본 변함)
+
+    del numbers_list[0] # 젤 낮은 수 제거
+    del numbers_list[-1] # 젤 높은 수 제거
+
+    sum_numbers = sum(numbers_list) # 리스트 다 더해~~~(리스트도 sum 되네..)
+    average_numbers = sum_numbers / len(numbers_list) # 평균 구하기
+
+
+    round_average_numbers = round(average_numbers) # round 조건 없으면 소수점 1의 자리에서 반올림!
+    print(f'#{i} {round_average_numbers}')
