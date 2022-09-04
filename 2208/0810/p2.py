@@ -1,3 +1,6 @@
+from pydoc import render_doc
+
+
 test_case = int(input())
 
 for tc in range(test_case):
@@ -46,4 +49,6 @@ for tc in range(test_case):
     else:
         print(f'#{tc+1} 0')
 
+  
+    
 
