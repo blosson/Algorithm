@@ -3,7 +3,8 @@
 2. min_cnt, cnt 변수를 만들어서 최솟값을 비교하는 코드를 함수 중간에 넣어서 백트래킹
 '''
 
+
 N, M = map(int, input().split())
 maze = [list(map(int, input())) for _ in range(N)]
 
-    
+
