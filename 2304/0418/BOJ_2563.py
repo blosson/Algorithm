@@ -1,4 +1,4 @@
-# BOJ_2563 S1
+# BOJ_2563 색종이 (S5)
 
 num = int(input())
 paper = [[0] * 100 for _ in range(100)]
@@ -18,4 +18,10 @@ for i in range(100):
             ans += 1
 
 print(ans)
+
+ans = 0
+for row in paper:
+    ans += row.count(1)
+
+
             
