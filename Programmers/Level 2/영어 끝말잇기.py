@@ -16,6 +16,7 @@ def solution(n, words):
     for i in range(len(words) + 1):
         # 마지막 단어까지 말한 후 이상 없을 시 [0, 0] 출력
         if i == len(words):
+            
             answer = [0, 0]
             break
         
