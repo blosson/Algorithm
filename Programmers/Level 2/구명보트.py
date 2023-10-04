@@ -1,3 +1,45 @@
+# <IDEA>
+# 1. people 배열을 내림차순으로 정렬
+# 2. 이미 구명보트에 탑승한 사람들은 탑승대상에서 제외해야하므로 이를 표시해 줄 사람 수만큼의 배열 생성
+# 3. people 배열 순회하며 구명보트 인원 계산
+
+
+#1. 정답 버전
+# deque 사용을 위한 import
+from collections import deque
+
+def solution(people, limit):
+    # 가장 몸무게 많은 사람과 가장 적은 사람끼리 태워야 구명보트를 최소화할 수 있으므로 역순 정렬
+    people = sorted(people, reverse = True)
+    # pop(0)보다 시간 단출을 위해 people 배열을 deque로 선언
+    people = deque(people)
+    # print(people)
+    
+    cnt = 0
+    while people:
+        # 혼자 남았으면 혼자타면 되므로 pop하고 cnt + 1
+        if len(people) == 1:
+            people.pop()
+            cnt += 1
+        
+        else:
+            # 남아있는 사람 중 가장 무거운 사람과 가벼운 사람의 합이 limit 이하면
+            if people[0] + people[-1] <= limit:
+                # deque에서 제거 후 cnt +1
+                cnt += 1
+                people.popleft()
+                people.pop()
+        
+            # 둘을 합쳐 limit 초과면 자기자신만 탑승하므로 cnt+1, deque에서 삭제
+            else:
+                cnt += 1
+                people.popleft()
+                        
+    return cnt
+
+
+#2. 시간초과
+
 def solution(people, limit):
     # 가장 몸무게 많은 사람과 가장 적은 사람끼리 태워야 구명보트를 최소화할 수 있으므로 역순 정렬
     people = sorted(people, reverse = True)
@@ -35,3 +77,18 @@ def solution(people, limit):
                     break
                     
     return cnt
+
+
+# 미친 풀이
+def solution(people, limit) :
+    answer = 0
+    people.sort()
+
+    a = 0
+    b = len(people) - 1
+    while a < b :
+        if people[b] + people[a] <= limit :
+            a += 1
+            answer += 1
+        b -= 1
+    return len(people) - answer
