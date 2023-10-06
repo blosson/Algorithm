@@ -1,0 +1,6 @@
+-- https://school.programmers.co.kr/learn/courses/30/lessons/131536
+-- 2개 이상 GROUP BY, 복습 필요
+SELECT USER_ID, PRODUCT_ID FROM ONLINE_SALE 
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(PRODUCT_ID) > 1
+ORDER BY USER_ID, PRODUCT_ID DESC
