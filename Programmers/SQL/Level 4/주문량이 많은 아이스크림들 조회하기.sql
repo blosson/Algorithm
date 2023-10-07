@@ -1,0 +1,9 @@
+-- https://school.programmers.co.kr/learn/courses/30/lessons/133027
+-- UNION 다른 방법, SELECT를 테이블로 만들기
+SELECT FLAVOR  FROM
+(SELECT * FROM FIRST_HALF 
+UNION ALL
+SELECT * FROM JULY) A
+GROUP BY FLAVOR
+ORDER BY SUM(TOTAL_ORDER) DESC
+LIMIT 3
