@@ -1,5 +1,5 @@
 -- https://school.programmers.co.kr/learn/courses/30/lessons/59411
--- DATEDIFF 사용, 그런데 날짜가 같고 시간이 다른 경우가 있었다면?
+-- DATEDIFF 사용, 그런데 날짜가 같고 시간이 다른 경우가 있었다면? HOURDIFF도 공부해보기
 SELECT INS.ANIMAL_ID, INS.NAME FROM ANIMAL_INS INS
 JOIN ANIMAL_OUTS OUTS ON INS.ANIMAL_ID = OUTS.ANIMAL_ID
 ORDER BY DATEDIFF(OUTS.DATETIME, INS.DATETIME) DESC
