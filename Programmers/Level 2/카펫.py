@@ -17,6 +17,6 @@ def solution(brown, yellow):
         if (i-2) * (j-2) == yellow:
             answer.append(i)
             answer.append(j)
-            break
+            break``
 
     return answer
