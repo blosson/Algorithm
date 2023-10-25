@@ -23,7 +23,7 @@ def solution(priorities, location):
             idx_list.append(process)
             
         # print(idx_list)
-        # print(rank)
+        # print(rank) //
         
     answer = rank[location]
     return answer
