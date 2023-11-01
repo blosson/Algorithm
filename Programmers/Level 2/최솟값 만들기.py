@@ -1,0 +1,11 @@
+# 풀이 아이디어 증명 : https://velog.io/@injoon2019/알고리즘-프로그래머스-최솟값-만들기
+
+def solution(A,B):
+    answer = 0
+    A.sort()
+    B.sort(reverse=True)
+    
+    for i in range(len(A)):
+        answer += A[i] * B[i]
+
+    return answer
